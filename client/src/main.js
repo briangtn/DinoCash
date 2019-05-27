@@ -15,8 +15,5 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>',
-  data : {
-    name: "test",  
-  }
+  template: '<App/>'
 })
