@@ -1,0 +1,10 @@
+{
+  "name": "pgDS",
+  "connector": "postgresql",
+  "url": "postgres://postgres@localhost/cashRegister",
+  "host": "localhost",
+  "port": 5432,
+  "user": "postgres",
+  "password": "",
+  "database": "cashRegister"
+}
