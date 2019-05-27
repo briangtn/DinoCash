@@ -21,6 +21,11 @@
         </div>
         <div class="columns" v-if="isOpen">
             <div class="column is-four-fifths">
+                <div class="is-inline-block box" @click="addOtherToOrder">
+                    <figure class="image is-256x256">
+                        <img src="https://static.thenounproject.com/png/212203-200.png" alt="">
+                    </figure>
+                </div>
                 <div class="is-inline-block box" v-for="article in articles" @click="addArticleToOrder(article)">
                     <figure class="image is-256x256">
                         <img v-if="article.image_url" :src="article.image_url" alt="">
@@ -137,6 +142,20 @@
             addArticleToOrder: function (article) {
                 this.currentOrder.push(article);
                 this.total += article.price;
+            },
+            addOtherToOrder: function() {
+                this.$dialog.prompt({
+                    message: 'Prix',
+                    inputAttrs: {
+                        type: 'number',
+                        placeholder: 'Prix',
+                        step: 'any',
+                        value: 0,
+                    },
+                    onConfirm: (value) => {
+                        this.addArticleToOrder({price: parseFloat(value), image_url: "https://static.thenounproject.com/png/212203-200.png"})
+                    }
+                })
             },
             openOrderConfirmation: function() {
                 if (this.currentOrder.length == 0)
