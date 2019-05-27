@@ -38,7 +38,7 @@
             create: function(payementMethod) {
                 let newOrder = [];
                 for (let i = 0; i < this.order.length; i++) {
-                    newOrder.push({articleId: this.order[i].id, sellingId: this.sellingId, payementMethod: payementMethod});
+                    newOrder.push({sellingId: this.sellingId, payementMethod: payementMethod, price: this.order[i].price});
                 }
                 this.axios.post(process.env.API_LOCATION + '/article-sells/order', newOrder)
                 .then((response) => {

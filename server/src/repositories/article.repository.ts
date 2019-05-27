@@ -8,16 +8,10 @@ export class ArticleRepository extends DefaultCrudRepository<
   Article,
   typeof Article.prototype.id
 > {
-  public readonly articleSells: HasManyRepositoryFactory<
-    ArticleSell,
-    typeof Article.prototype.id
-  >;
 
   constructor(
     @inject('datasources.pgDS') dataSource: PgDsDataSource,
-    @repository.getter('ArticleSellRepository') getArticleSellRepository: Getter<ArticleSellRepository>
   ) {
     super(Article, dataSource);
-    this.articleSells = this.createHasManyRepositoryFactoryFor('articleSells', getArticleSellRepository);
   }
 }

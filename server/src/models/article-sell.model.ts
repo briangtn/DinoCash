@@ -13,8 +13,11 @@ export class ArticleSell extends Entity {
   @belongsTo(() => Selling, {keyTo: "id"})
   sellingId: number;
 
-  @belongsTo(() => Article, {keyTo: "id"})
-  articleId: number;
+  @property({
+    type: 'number',
+    required: true
+  })
+  price: number;
 
   @property({
     type: 'number',

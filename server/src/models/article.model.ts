@@ -26,9 +26,6 @@ export class Article extends Entity {
   })
   price: number;
 
-  @hasMany(() => ArticleSell, {keyTo: "articleId"})
-  articleSells?: ArticleSell[];
-
   // Define well-known properties here
 
   // Indexer property to allow additional data

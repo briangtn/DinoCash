@@ -13,18 +13,11 @@ export class ArticleSellRepository extends DefaultCrudRepository<
     Selling,
     typeof ArticleSell.prototype.id
   >;
-
-  public readonly article: BelongsToAccessor<
-    Article,
-    typeof ArticleSell.prototype.id
-  >
   constructor(
     @inject('datasources.pgDS') dataSource: PgDsDataSource,
     @repository.getter('SellingRepository') sellingRepositoryGetter: Getter<SellingRepository>,
-    @repository.getter('ArticleRepository') ArticleRepositoryGetter: Getter<ArticleRepository>
   ) {
     super(ArticleSell, dataSource);
     this.selling = this.createBelongsToAccessorFor('selling', sellingRepositoryGetter);
-    this.article = this.createBelongsToAccessorFor('article', ArticleRepositoryGetter);
   }
 }

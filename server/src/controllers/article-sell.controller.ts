@@ -157,8 +157,7 @@ export class ArticleSellController {
     for (let i = 0; i < sells.length; i++) {
       let sell: ArticleSell = sells[i];
       
-      let article = await this.articleRepository.findById(sell.articleId);
-      total += article.price;
+      total += sell.price;
     }
 
     return await total;
