@@ -1,5 +1,7 @@
 # DinoCash
 
+*this project is a draft* 
+
 ## Install
 
 ### Client:
