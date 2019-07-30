@@ -1,6 +1,6 @@
 # DinoCash
 
-*this project is a draft* 
+**this project is a draft**
 
 ## Install
 
