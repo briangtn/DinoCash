@@ -15,3 +15,4 @@
 * npm install
 * Edit loopback-postgres-connectior
 * npm start
+azeaze
